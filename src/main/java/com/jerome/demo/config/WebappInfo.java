@@ -10,10 +10,16 @@ import org.springframework.stereotype.Component;
 @Component
 public class WebappInfo {
 
-    @Value("${com.jerome.demo.title}")
+    @Value("${com.neo.project.info.name}")
+    private String name;
+
+    @Value("${com.neo.project.info.company}")
+    private String company;
+
+    @Value("${com.neo.title}")
     private String title;
 
-    @Value("${com.jerome.demo.description}")
+    @Value("${com.neo.description}")
     private String description;
 
 }

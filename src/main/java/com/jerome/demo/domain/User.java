@@ -5,45 +5,50 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
 
-@Data
-@Builder
-@NoArgsConstructor
 @AllArgsConstructor
-@Entity(name = "demo_user")
-public class User {
+@NoArgsConstructor
+@Builder
+@Data
+@Entity
+public class User implements Serializable{
 
+    private static final long serialVersionUID = 1L;
+    
     @Id
     @GeneratedValue
     private Long id;
-
+    
     @Column(nullable = false, unique = true)
     private String userName;
+    
+    @Column(nullable = false)
+    private String passWord;
 
     @Column(nullable = false)
-    private String password;
-
-    @Column(nullable = true)
-    private Integer age;
-
-    @Column(nullable = true)
     private Boolean sex;
-
-    @Column(nullable = true)
+    
+    @Column(nullable = false, unique = true)
     private String email;
-
-    @Column(nullable = true)
-    private String phoneNumber;
-
-    @Column(nullable = false)
+    
+    @Column(nullable = true, unique = true)
     private String nickName;
+    
+    @Column(nullable = false)
+    private String regTime;
 
     @Column(nullable = true)
-    private Date regTime;
+    private Date loginTime;
+
+    @Enumerated(EnumType.STRING)
+    @Column(nullable = false)
+    private EnumUserType userType;
+
+    @Transient
+    private List<Role> roleList;
 
 }

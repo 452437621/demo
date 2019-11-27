@@ -1,4 +1,4 @@
-package com.jerome.demo;
+package com.jerome.demo.controller;
 
 import com.jerome.demo.controller.HelloWorldController;
 import org.junit.jupiter.api.BeforeEach;
