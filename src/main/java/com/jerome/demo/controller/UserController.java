@@ -3,10 +3,7 @@ package com.jerome.demo.controller;
 import com.jerome.demo.domain.User;
 import com.jerome.demo.domain.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageRequest;
-import org.springframework.data.domain.Pageable;
-import org.springframework.data.domain.Sort;
+import org.springframework.data.domain.*;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -21,10 +18,11 @@ public class UserController {
     private UserRepository userDao;
 
     @RequestMapping("page")
-    public Page<User> page(int pageNum, int size) {
+    public Page<User> page(int pageNum, int size, User user) {
+        Example<User> example = Example.of(user);
         Sort sort = Sort.by(Sort.Direction.ASC, "id");
         Pageable pageAble = PageRequest.of(pageNum, size, sort);
-        Page<User> page = userDao.findAll(pageAble);
+        Page<User> page = userDao.findAll(example, pageAble);
         return page;
     }
 
@@ -39,6 +37,5 @@ public class UserController {
         User newUser = userDao.save(user);
         return newUser;
     }
-
 
 }
