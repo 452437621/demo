@@ -34,6 +34,7 @@ public class UserController {
         return userOptional.get();
     }
 
+    @RequestMapping("save")
     public User save(User user) {
         User newUser = userDao.save(user);
         return newUser;
