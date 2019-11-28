@@ -1,4 +1,4 @@
-package com.jerome.demo.config;
+package com.jerome.demo.entity;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;

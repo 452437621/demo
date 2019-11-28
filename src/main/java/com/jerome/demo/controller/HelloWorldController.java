@@ -1,6 +1,6 @@
 package com.jerome.demo.controller;
 
-import com.jerome.demo.config.WebappInfo;
+import com.jerome.demo.entity.WebappInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
