@@ -1,4 +1,4 @@
-package com.jerome.demo.controller;
+package com.jerome.demo.controller.api;
 
 import com.jerome.demo.entity.Book;
 import org.springframework.http.ResponseEntity;

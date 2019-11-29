@@ -1,4 +1,4 @@
-package com.jerome.demo.controller;
+package com.jerome.demo.controller.user;
 
 import com.jerome.demo.domain.User;
 import com.jerome.demo.domain.UserRepository;
@@ -7,7 +7,6 @@ import org.springframework.data.domain.*;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.List;
 import java.util.Optional;
 
 @RestController

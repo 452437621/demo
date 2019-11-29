@@ -1,6 +1,6 @@
 package com.jerome.demo.controller;
 
-import com.jerome.demo.controller.HelloWorldController;
+import com.jerome.demo.controller.test.HelloWorldController;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;

@@ -1,4 +1,4 @@
-package com.jerome.demo.controller;
+package com.jerome.demo.controller.user;
 
 import com.jerome.demo.domain.Role;
 import com.jerome.demo.domain.RoleRepository;
