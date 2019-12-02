@@ -14,7 +14,7 @@ public class HelloWorldController {
 
     @RequestMapping("/world")
     public String index() {
-        return "Hello Word";
+        return "Hello Word ycz";
     }
 
     @RequestMapping("/webapp")
