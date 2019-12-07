@@ -3,6 +3,9 @@ package com.jerome.demo.controller.test;
 import com.jerome.demo.exception.ResourceNotFoundException;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.HashMap;
+import java.util.Map;
+
 @RestController
 @RequestMapping("/exception")
 public class ExceptionController {
@@ -17,9 +20,11 @@ public class ExceptionController {
 
     @RequestMapping("/resourceNotFound")
     public String testResourceNotFound(String path) {
-        if (path == null) {
-            throw new ResourceNotFoundException("path is null!");
+        if (path != null) {
+            Map<String, Object> data = new HashMap<>(1);
+            data.put("path", path);
+            throw new ResourceNotFoundException(data);
         }
-        return path;
+        return null;
     }
 }

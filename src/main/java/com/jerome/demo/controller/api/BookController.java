@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.Objects;
 import java.util.stream.Collectors;
 
 @RestController
@@ -29,7 +30,7 @@ public class BookController {
 
     @GetMapping("/book/name")
     public ResponseEntity<List<Book>> getByName(@RequestParam String name) {
-        List<Book> result = bookList.stream().filter(book -> book.getName() == name).collect(Collectors.toList());
+        List<Book> result = bookList.stream().filter(book -> Objects.equals(book.getName(), name)).collect(Collectors.toList());
         return ResponseEntity.ok(result);
     }
 

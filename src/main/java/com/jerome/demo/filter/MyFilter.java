@@ -1,27 +1,30 @@
 package com.jerome.demo.filter;
 
+import lombok.extern.slf4j.Slf4j;
+
 import javax.servlet.*;
 import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
 
+@Slf4j
 public class MyFilter implements Filter {
 
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {
-        System.out.println(this.getClass().getName() + "初始化");
+        log.info("初始化！");
     }
 
     @Override
     public void destroy() {
-        System.out.println(this.getClass().getName() + "销毁");
+        log.info("销毁！");
     }
 
     @Override
-    public void doFilter(ServletRequest srequest, ServletResponse sresponse, FilterChain filterChain) throws IOException, ServletException {
-        HttpServletRequest request = (HttpServletRequest) srequest;
-        String uri = request.getRequestURI();
-        System.out.println("filter url = " + uri);
-        filterChain.doFilter(srequest, sresponse);
+    public void doFilter(ServletRequest request, ServletResponse response, FilterChain filterChain) throws IOException, ServletException {
+        HttpServletRequest httpRequest = (HttpServletRequest) request;
+        String uri = httpRequest.getRequestURI();
+        log.info(String.format("URI = %s", uri));
+        filterChain.doFilter(request, response);
     }
 
 }

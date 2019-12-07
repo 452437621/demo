@@ -2,13 +2,14 @@ package com.jerome.demo.exception;
 
 import lombok.Data;
 
-@Data
-public class ResourceNotFoundException extends RuntimeException {
+import java.util.Map;
 
-    private String message;
+/**
+ * 资源未找到
+ */
+public class ResourceNotFoundException extends BaseException {
 
-    public ResourceNotFoundException(String message) {
-        super(message);
-        this.message = message;
+    public ResourceNotFoundException(Map<String, Object> map) {
+        super(ErrorCode.RESOURCE_NOT_FOUND, map);
     }
 }
