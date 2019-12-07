@@ -1,11 +1,11 @@
 package com.jerome.demo.lambda;
 
-import lombok.extern.log4j.Log4j2;
+import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
-@Log4j2
+@Slf4j
 @RunWith(JUnit4.class)
 public class TestLambda {
 
