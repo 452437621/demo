@@ -1,4 +1,4 @@
-package com.jerome.demo.controller.test;
+package com.jerome.demo.controller;
 
 import org.junit.Test;
 import org.junit.jupiter.api.BeforeEach;

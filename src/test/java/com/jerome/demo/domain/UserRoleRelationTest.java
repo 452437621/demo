@@ -36,9 +36,12 @@ public class UserRoleRelationTest {
         String formattedDate = dateFormat.format(regTime);
 
         List<User> userList = new ArrayList<User>(3);
-        userList.add(User.builder().userName("aa1").passWord("123456").nickName("张三").sex(true).email("aa@126.com").regTime(formattedDate).userType(EnumUserType.Register).build());
-        userList.add(User.builder().userName("bb2").passWord("123456").nickName("李四").sex(true).email("bb@126.com").regTime(formattedDate).userType(EnumUserType.Register).build());
-        userList.add(User.builder().userName("cc3").passWord("123456").nickName("王五").sex(true).email("cc@126.com").regTime(formattedDate).userType(EnumUserType.Register).build());
+        userList.add(User.builder().userName("aa1").passWord("123456").nickName("张三").sex(true).email("aa@126.com")
+                .regTime(formattedDate).userType(EnumUserType.Register).build());
+        userList.add(User.builder().userName("bb2").passWord("123456").nickName("李四").sex(true).email("bb@126.com")
+                .regTime(formattedDate).userType(EnumUserType.Register).build());
+        userList.add(User.builder().userName("cc3").passWord("123456").nickName("王五").sex(true).email("cc@126.com")
+                .regTime(formattedDate).userType(EnumUserType.Register).build());
         userList = this.userRepository.saveAll(userList);
 
         List<Role> roleList = new ArrayList<Role>(3);

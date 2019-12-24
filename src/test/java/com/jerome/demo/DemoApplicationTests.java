@@ -1,12 +1,12 @@
-package com.jerome.demo.controller;
+package com.jerome.demo;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-public class ApplicationTests {
+public class DemoApplicationTests {
 
 	@Test
-	public void contextLoads() {}
+	public void start() {}
 
 }
